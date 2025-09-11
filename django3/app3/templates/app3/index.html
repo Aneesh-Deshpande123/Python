@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>somthing</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Calculate SI</button>
+    </form>
+    <p>Dear Sir, you will get a maturity amount as below</p>
+    <p>USD:{{param1}}</p>
+    <p>for a deposit of USD:{{param2}}</p>
+</body>
+</html>
