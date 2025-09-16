@@ -1,4 +1,5 @@
 from django.shortcuts import render
+import datetime as dt
 
 def home(request):
     p = 10000
@@ -6,11 +7,6 @@ def home(request):
     r = 8
     si = p*t*r/100       
     a = p+si
-    templates = '''
-Dear Chandrashekar,
-You will receive an amount of Rs {r1}. on . for a deposit of Rs………  
-
-Total Interest is ……
-We are always at your service.
-nqx-yfrk-fnm
-    '''
+    dt1 = dt.datetime.now()
+    dt2 = dt1.strftime("%d %b %Y")
+    return render(request,"app2/index.html",{"p":p, "t":t, "r":r, "a":a, "si":si, "dt":dt2})
